@@ -26,5 +26,5 @@ for tag in result.find_all("h5"):
     country = dataGroup[2].get_text().lower()
     kvpairs[country] = num
 
-for i in kvpairs:
-    print(i+"-"+kvpairs[i])
+# for i in kvpairs:
+#     print(i+"-"+kvpairs[i])
