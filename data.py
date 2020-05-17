@@ -1,3 +1,4 @@
+import os
 from bs4 import BeautifulSoup
 from selenium.webdriver import Chrome
 from selenium.webdriver.chrome.options import Options
@@ -7,8 +8,9 @@ url = "https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423
 
 chrome_options = Options()
 chrome_options.add_argument("--headless")
+chrome_options.binary_location = os.environ.get('GOOGLE_CHROME_BIN')
 
-with Chrome(options=chrome_options) as browser:
+with Chrome(executable_path=str(os.environ.get('CHROMEDRIVER_PATH')), options=chrome_options) as browser:
 
     browser.get(url)
     time.sleep(2)
@@ -24,7 +26,7 @@ for tag in result.find_all("h5"):
     dataGroup = tag.contents
     num = dataGroup[0].get_text()
     country = dataGroup[2].get_text().lower()
-    if country == "usa":
+    if country == "us":
         country = "usa"
     kvpairs[country] = num
 

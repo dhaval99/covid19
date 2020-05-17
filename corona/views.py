@@ -8,7 +8,7 @@ def home(request):
     return render(request, 'index.html')
 
 def info(request):
-    country = request.POST['cName']
+    country = request.POST['cName'].lower()
     send = " "
     for i in kvpairs:
         if i == country:
