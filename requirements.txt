@@ -9,12 +9,16 @@ certifi==2020.4.5.1
 chardet==3.0.4
 click==7.1.1
 distlib==0.3.0
+dj-database-url==0.5.0
 Django==3.0.6
+django-heroku==0.3.1
 filelock==3.0.12
+gunicorn==20.0.4
 idna==2.9
 numpy==1.18.4
 pandas==1.0.3
 pathspec==0.8.0
+psycopg2==2.8.5
 pycodestyle==2.5.0
 PyJWT==1.7.1
 python-dateutil==2.8.1
@@ -31,3 +35,4 @@ typed-ast==1.4.1
 urllib3==1.25.9
 virtualenv==20.0.20
 virtualenvwrapper-win==1.2.6
+whitenoise==5.0.1
