@@ -6,11 +6,14 @@ import time
 
 url = "https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6"
 
+GOOGLE_CHROME_BIN = '/app/.apt/usr/bin/google-chrome'
+CHROMEDRIVER_PATH = '/app/.chromedriver/bin/chromedriver'
 chrome_options = Options()
 chrome_options.add_argument("--headless")
 chrome_options.binary_location = os.environ.get('GOOGLE_CHROME_BIN')
 
-with Chrome(executable_path=str(os.environ.get('CHROMEDRIVER_PATH')), options=chrome_options) as browser:
+
+with Chrome(executable_path=str(execution_path=os.environ.get('CHROMEDRIVER_PATH')), options=chrome_options) as browser:
 
     browser.get(url)
     time.sleep(2)
