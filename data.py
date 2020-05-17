@@ -13,7 +13,7 @@ chrome_options.add_argument("--headless")
 chrome_options.binary_location = os.environ.get('GOOGLE_CHROME_BIN')
 
 
-with Chrome(executable_path=str(execution_path=os.environ.get('CHROMEDRIVER_PATH')), options=chrome_options) as browser:
+with Chrome(execution_path=str(os.environ.get('CHROMEDRIVER_PATH')), options=chrome_options) as browser:
 
     browser.get(url)
     time.sleep(2)
