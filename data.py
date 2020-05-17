@@ -10,10 +10,10 @@ GOOGLE_CHROME_BIN = '/app/.apt/usr/bin/google-chrome'
 CHROMEDRIVER_PATH = '/app/.chromedriver/bin/chromedriver'
 chrome_options = Options()
 chrome_options.add_argument("--headless")
-chrome_options.binary_location = os.environ.get('GOOGLE_CHROME_BIN')
+chrome_options.binary_location=GOOGLE_CHROME_BIN
 
 
-with Chrome(execution_path=str(os.environ.get('CHROMEDRIVER_PATH')), options=chrome_options) as browser:
+with Chrome(executable_path=CHROMEDRIVER_PATH, options=chrome_options) as browser:
 
     browser.get(url)
     time.sleep(2)
