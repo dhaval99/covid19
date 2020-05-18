@@ -1,16 +1,21 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
-<title>covid-19</title> 
+  <title>covid-19</title>
 </head>
 
 {% block content %}
 {% if number != " "%}
 Number of confirmed coronavirus cases : {{number}}
+<br>
+<p><a href="/"><button>Go Back</button></a></p>
 {% else %}
 Enter a valid country name...
-<p>e.g. South Africa, USA, UK, Saudi Arabia... </p>
-{% endif %}  
+<p>e.g. South Africa, USA, UK, Saudi Arabia...</p>
+<p><a href="/"><button>Search Again</button></a></p>
+{% endif %}
 {% endblock %}
+
 </html>
