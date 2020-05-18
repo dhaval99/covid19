@@ -9,11 +9,11 @@ def home(request):
 
 
 def info(request):
-    country = request.POST['cName'].lower()
+    country = request.POST['cName'].lower().strip()
     send = " "
-    
-    if country == "us":
-        country = "usa"
+
+    if country == "usa" or country == "united states of america":
+        country = "us"
     elif country == "uk":
         country = "united kingdom"
     elif country == "uae":
