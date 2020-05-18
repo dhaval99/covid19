@@ -17,6 +17,8 @@ def info(request):
         country = "united kingdom"
     elif country == "uae":
         country = "united arab emirates"
+    elif country == "south korea":
+        country = "korea, south"
     for i in kvpairs:
         if i == country:
             send = kvpairs[i]
