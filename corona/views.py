@@ -11,7 +11,6 @@ def home(request):
 def info(request):
     country = request.POST['cName'].lower().strip()
     send = " "
-
     if country == "usa" or country == "united states of america":
         country = "us"
     elif country == "uk":
