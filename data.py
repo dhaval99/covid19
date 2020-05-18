@@ -11,19 +11,19 @@ GOOGLE_CHROME_BIN = '/app/.apt/usr/bin/google-chrome'
 CHROMEDRIVER_PATH = '/app/.chromedriver/bin/chromedriver'
 chrome_options = Options()
 chrome_options.add_argument("--headless")
-if not DEBUG:
-    chrome_options.binary_location = GOOGLE_CHROME_BIN
+# if not DEBUG:
+chrome_options.binary_location = GOOGLE_CHROME_BIN
 
-if not DEBUG:
-    with Chrome(executable_path=CHROMEDRIVER_PATH, options=chrome_options) as browser:
-        browser.get(url)
-        time.sleep(2)
-        html = browser.page_source
-else:
-    with Chrome(options=chrome_options) as browser:
-        browser.get(url)
-        time.sleep(2)
-        html = browser.page_source
+# if not DEBUG:
+with Chrome(executable_path=CHROMEDRIVER_PATH, options=chrome_options) as browser:
+    browser.get(url)
+    time.sleep(2)
+    html = browser.page_source
+# else:
+# with Chrome(options=chrome_options) as browser:
+#     browser.get(url)
+#     time.sleep(2)
+#     html = browser.page_source
 
 html = BeautifulSoup(html, 'html.parser')
 
