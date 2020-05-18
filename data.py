@@ -10,7 +10,7 @@ GOOGLE_CHROME_BIN = '/app/.apt/usr/bin/google-chrome'
 CHROMEDRIVER_PATH = '/app/.chromedriver/bin/chromedriver'
 chrome_options = Options()
 chrome_options.add_argument("--headless")
-chrome_options.binary_location=GOOGLE_CHROME_BIN
+chrome_options.binary_location = GOOGLE_CHROME_BIN
 
 
 with Chrome(executable_path=CHROMEDRIVER_PATH, options=chrome_options) as browser:
@@ -31,7 +31,8 @@ for tag in result.find_all("h5"):
     country = dataGroup[2].get_text().lower()
     if country == "us":
         country = "usa"
+    elif country == "united kingdom":
+        country = "uk"
+
     kvpairs[country] = num
 
-# for i in kvpairs:
-#     print(i+"-"+kvpairs[i])
