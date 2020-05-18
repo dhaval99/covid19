@@ -7,9 +7,11 @@ from data import kvpairs
 def home(request):
     return render(request, 'index.html')
 
+
 def info(request):
     country = request.POST['cName'].lower()
     send = " "
+    
     if country == "us":
         country = "usa"
     elif country == "uk":
