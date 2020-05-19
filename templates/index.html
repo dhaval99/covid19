@@ -4,87 +4,74 @@
 <head>
   <meta charset="utf-8">
   <title>covid-19</title>
-  <<<<<<< HEAD <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-166807102-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-166807102-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-      gtag('config', 'UA-166807102-1');
-    </script>
-    <script>
-      function myFunction() {
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-166807102-1');
+  </script>
+  <script>
+    function myFunction() {
 
-        var input, filter, table, tr, td, i, txtValue;
-        input = document.getElementById("myInput");
-        filter = input.value.toUpperCase();
-        table = document.getElementById("list");
-        tr = table.getElementsByTagName("tr");
-        for (i = 0; i < tr.length; i++) {
-          td = tr[i].getElementsByTagName("td")[0];
-          if (td) {
-            txtValue = td.textContent || td.innerText;
-            if (txtValue.toUpperCase().indexOf(filter) > -1) {
-              tr[i].style.display = "";
-            } else {
-              tr[i].style.display = "none";
-            }
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("list");
+      tr = table.getElementsByTagName("tr");
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
           }
         }
-        if (document.getElementById("myInput").value == "")
-          remove();
+      }
+      if (document.getElementById("myInput").value == "")
+        remove();
+    }
+
+    function show() {
+
+      var tr, td, i;
+      tr = document.getElementById("list").getElementsByTagName("tr");
+
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+
+        td.style.display = 'block';
       }
 
-      function show() {
+      myFunction();
+    }
 
-        var tr, td, i;
-        tr = document.getElementById("list").getElementsByTagName("tr");
+    function remove() {
 
-        for (i = 0; i < tr.length; i++) {
-          td = tr[i].getElementsByTagName("td")[0];
+      var tr, td, i;
+      tr = document.getElementById("list").getElementsByTagName("tr");
 
-          td.style.display = 'block';
-        }
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
 
-        myFunction();
-      }
-
-      function remove() {
-
-        var tr, td, i;
-        tr = document.getElementById("list").getElementsByTagName("tr");
-
-        for (i = 0; i < tr.length; i++) {
-          td = tr[i].getElementsByTagName("td")[0];
-
-          td.style.display = 'none';
-
-        }
-
+        td.style.display = 'none';
 
       }
 
-      function select(arg) {
-        document.getElementById("myInput").value = arg;
-      }
-    </script>
-    =======
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-166807102-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
 
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
+    }
 
-      gtag('config', 'UA-166807102-1');
-    </script>
-    >>>>>>> e9b6548a68ce60b83db25441245898e9cc34378d
+    function select(arg) {
+      document.getElementById("myInput").value = arg;
+      remove();
+    }
+  </script>
 </head>
 
 <body>
@@ -98,7 +85,7 @@
       {% for n in dropdown %}
 
       <tr>
-
+       
         <td onclick='select(this.textContent)' class="search" style="display:none">{{n}}</td>
       </tr>
       {% endfor %}
