@@ -1,8 +1,8 @@
 import os
 from bs4 import BeautifulSoup
-from selenium.webdriver import Chrome
+# from selenium.webdriver import Chrome
 from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.chrome.options import Options
+# from selenium.webdriver.chrome.options import Options
 import time
 from covid.settings import DEBUG
 from selenium import webdriver
@@ -37,7 +37,6 @@ browser.get(url)
 time.sleep(2)
 html = browser.page_source
 
-      
 html = BeautifulSoup(html, 'html.parser')
 
 result = html.find("margin-container", {"class": "left right top"})

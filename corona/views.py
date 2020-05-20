@@ -1,11 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from data import kvpairs, orig_pairs
+from data import kvpairs
+from data import orig_pairs
 # Create your views here.
 
 
 def home(request):
-    return render(request, 'index.html', {'dropdown': orig_pairs})
+    return render(request, 'index.html')
 
 
 def info(request):
