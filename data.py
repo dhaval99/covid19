@@ -11,11 +11,11 @@ GOOGLE_CHROME_BIN = '/app/.apt/usr/bin/google-chrome'
 CHROMEDRIVER_PATH = '/app/.chromedriver/bin/chromedriver'
 chrome_options = Options()
 chrome_options.add_argument("--headless")
-if not DEBUG:
+if DEBUG:
 
     chrome_options.binary_location = GOOGLE_CHROME_BIN
 
-if not DEBUG:
+if DEBUG:
 
     with Chrome(executable_path=CHROMEDRIVER_PATH, options=chrome_options) as browser:
         browser.get(url)
