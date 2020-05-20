@@ -4,30 +4,39 @@ from selenium.webdriver import Chrome
 from selenium.webdriver.chrome.options import Options
 import time
 from covid.settings import DEBUG
+from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
+
+browser = webdriver.Chrome(ChromeDriverManager().install())
 
 url = "https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6"
 
-GOOGLE_CHROME_BIN = '/app/.apt/usr/bin/google-chrome'
-CHROMEDRIVER_PATH = '/app/.chromedriver/bin/chromedriver'
-chrome_options = Options()
-chrome_options.add_argument("--headless")
-if DEBUG:
+# GOOGLE_CHROME_BIN = '/app/.apt/usr/bin/google-chrome'
+# CHROMEDRIVER_PATH = '/app/.chromedriver/bin/chromedriver'
+# chrome_options = Options()
+# chrome_options.add_argument("--headless")
+# if DEBUG:
 
-    chrome_options.binary_location = GOOGLE_CHROME_BIN
+#     chrome_options.binary_location = GOOGLE_CHROME_BIN
 
-if DEBUG:
+# if DEBUG:
 
-    with Chrome(executable_path=CHROMEDRIVER_PATH, options=chrome_options) as browser:
-        browser.get(url)
-        time.sleep(2)
-        html = browser.page_source
-else:
+#     with Chrome(executable_path=CHROMEDRIVER_PATH, options=chrome_options) as browser:
+#         browser.get(url)
+#         time.sleep(2)
+#         html = browser.page_source
+# else:
 
-    with Chrome(options=chrome_options) as browser:
-        browser.get(url)
-        time.sleep(2)
-        html = browser.page_source
+#     with Chrome(options=chrome_options) as browser:
+#         browser.get(url)
+#         time.sleep(2)
+#         html = browser.page_source
 
+browser.get(url)
+time.sleep(2)
+html = browser.page_source
+
+      
 html = BeautifulSoup(html, 'html.parser')
 
 result = html.find("margin-container", {"class": "left right top"})
