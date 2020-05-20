@@ -21,4 +21,4 @@ urlpatterns = [
     path('', include('corona.urls')),
     path('admin/', admin.site.urls),
     
-]
+]   

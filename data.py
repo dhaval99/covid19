@@ -36,8 +36,12 @@ orig_pairs = {}
 for tag in result.find_all("h5"):
     dataGroup = tag.contents
     num = dataGroup[0].get_text()
-    org_country = "United States Of America" if dataGroup[2].get_text() == "US" else dataGroup[2].get_text()
-    org_country = "South Korea" if dataGroup[2].get_text() == "Korea, South" else dataGroup[2].get_text()
+    if dataGroup[2].get_text() == "US":
+        org_country = "United States Of America"
+    elif dataGroup[2].get_text() == "Korea, South":
+        org_country = "South Korea"
+    else:
+        org_country = dataGroup[2].get_text()
     country = dataGroup[2].get_text().lower()
     kvpairs[country] = num
     orig_pairs[org_country] = num
