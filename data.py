@@ -6,7 +6,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 import time
 from covid.settings import DEBUG
 from selenium import webdriver
- 
+
 
 browser = webdriver.Chrome(ChromeDriverManager().install())
 
@@ -37,7 +37,7 @@ browser.get(url)
 time.sleep(2)
 html = browser.page_source
 
-html = BeautifulSoup(html, 'html.parser')
+html = BeautifulSoup(html,'html.parser')
 
 result = html.find("margin-container", {"class": "left right top"})
 kvpairs = {}
