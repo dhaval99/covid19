@@ -38,7 +38,7 @@ time.sleep(2)
 html = browser.page_source
 
 html = BeautifulSoup(html, 'html.parser')
-    
+
 result = html.find("margin-container", {"class": "left right top"})
 kvpairs = {}
 orig_pairs = {}
