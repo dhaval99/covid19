@@ -6,7 +6,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 import time
 from covid.settings import DEBUG
 from selenium import webdriver
-
+ 
 
 browser = webdriver.Chrome(ChromeDriverManager().install())
 
