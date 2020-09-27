@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>covid-19</title>
+</head>
+
+{% block content %}
+{% if number != " "%}
+Number of confirmed coronavirus cases : {{number}}
+<br>
+<p><a href="/"><button>Go Back</button></a></p>
+{% else %}
+Data not available... 
+<p><a href="/"><button>Search Again</button></a></p>
+{% endif %}
+{% endblock %} 
+
+
+</html>
